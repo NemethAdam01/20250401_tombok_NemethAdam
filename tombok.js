@@ -156,7 +156,7 @@ if (!van4) {
 let van5 = false;
 for (let i = 0; i < tomb.length; i++) 
 {
-    if (tomb[i] == tomb[i+1]) {
+    if (tomb[i] == tomb[i+1] ||tomb[i] == tomb[i -1]) {
         van5 = true;
         break;
     }
