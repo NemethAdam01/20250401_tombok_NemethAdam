@@ -93,7 +93,7 @@ if (!van)
 let van2 = false;
 for (let i = 0; i < tomb.length; i++) 
     {
-        if (tomb[i-1] < 0 && 0 < tomb[i+1]){
+        if (tomb[i-1] < 0 && 0 > tomb[i+1]){
             van2 = true;
         }
     }
@@ -107,14 +107,85 @@ if (!van2) {
 let van3 = false;
 for (let i = 0; i < tomb.length; i++) 
     {
-        if (tomb[i-1] + tomb[i+1] > tomb[i])
+        if (tomb[i-1] + tomb[i+1] < tomb[i])
         {
             van3 = true;
         }
     }
 if (van3) {
-    console.log("van tömbben olyan elem, amelynek mindkét szomszédja nagyobb");
+    console.log("van a tömbben olyan elem,amely  nagyobb, mint két szomszédjának összege");
 }
 if (!van3) {
-    console.log("nincs tömbben olyan elem, amelynek mindkét szomszédja nagyobb");
+    console.log("nincs a tömbben olyan elem, amely nagyobb, mint két szomszédjának összege");
 }
+//g
+let ind = 0;
+for (let i = 0; i < tomb.length; i++) {
+    if (tomb[i] % 3 == 0 && !tomb[i] % 5 == 0)
+    {
+        ind = i;
+    }
+}
+console.log(`utolsó 3-mal osztható, de 5-tel nem osztható:${tomb[ind]}`);
+//h
+let db2 = 0;
+let van4 = false;
+for (let i = 0; i < tomb.length; i++) 
+{
+    db2 = 0;
+    for (let j = i + 1; j < tomb.length; j++)
+    {
+        if (tomb[j] == tomb[i])
+        {
+                db2++;
+        }
+    }
+    if (db2 >= 3)
+        {
+            van4 = true;
+        }
+        
+}
+if (van4) {
+    console.log("Van a tömbben 3 egyforma szám")
+}
+if (!van4) {
+    console.log("Nincs a tömbben 3 egyforma szám")
+}
+//i
+let van5 = false;
+for (let i = 0; i < tomb.length; i++) 
+{
+    if (tomb[i] == tomb[i+1]) {
+        van5 = true;
+        break;
+    }
+}
+if (van5) {
+    console.log("Van a tömbben 2 egymás melletti egyforma szám")
+}
+if (!van5) {
+    console.log("Nincs a tömbben 2 egymás melletti egyforma szám")
+}
+//j
+for (let i = 0; i < tomb.length; i++) {
+    if (tomb[i] % 10 == 0)
+        {
+            console.log(`10 többszöröseinek indexe:${i}`);
+        }
+    
+}
+//k
+let tombossz = 0;
+for (let i = 0; i < tomb.length; i++) {
+    tombossz += tomb[i];
+}
+let atlagalatt = 0;
+for (let i = 0; i < tomb.length; i++) 
+{
+    if (tomb[i] < tombossz / tomb.length)
+        {
+            atlagalatt++;
+        }
+}
+console.log(`atlag alatt:${atlagalatt}db`);
