@@ -6,31 +6,31 @@ for (let i = 0; i < 100; i++) {
 }
 console.log(randomok);
 let db = 0;
-for (let j = 1; j <= 6; j++) 
+for (let i = 1; i <= 6; i++) 
 {
     db = 0;  
-    for (let i = 0; i < randomok.lenght; i++)
+    for (let j = 0; j < randomok.length; j++)
     {
-        if (randomok[i] == j)
+        if (randomok[j] == i)
         {
             db++;
         }
         
     }
-    console.log(`${j} - ${db} db`);  
+    console.log(`${i} - ${db} db`);  
 }
 
 let osszeg = 0;
-for (let i = 0; i < randomok.lenght; i++)
+for (let i = 0; i < randomok.length; i++)
 {
     osszeg += randomok[i];
 }
-console.log(`átlag: ${osszeg / randomok.lenght}`);
+console.log(`átlag: ${osszeg / randomok.length}`);
 
 let felett = 0;
-for (let i = 0; i < randomok.lenght; i++)
+for (let i = 0; i < randomok.length; i++)
 {
-    if (randomok[i] > osszeg / randomok.lenght)
+    if (randomok[i] > osszeg / randomok.length)
         {
             felett++;
         }
@@ -45,7 +45,7 @@ for (let i = 0; i < 100; i++) {
 //a
 let max = 0;
 let index = 0;
-for (let i = 0; i < tomb.lenght; i++)
+for (let i = 0; i < tomb.length; i++)
 {
     if (tomb[i] > max)
     {
@@ -189,3 +189,10 @@ for (let i = 0; i < tomb.length; i++)
         }
 }
 console.log(`atlag alatt:${atlagalatt}db`);
+
+
+let autok = ["Mercedes", "BMW", "Audi", "Volvo", "Renault", "BMW"];
+autok.sort();
+console.log(autok);
+autok.reverse();
+console.log(autok);
